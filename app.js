@@ -20,24 +20,22 @@ mongoose.connection.on("connected",() => {
   console.log('connected to mongodb')
 });
 
-app.listen(3000, function () {
-  console.log('App is running on 3000!')
+app.listen(3001, function () {
+  console.log('App is running on 3001!')
 })
 
-const client = net.connect({ip :'10.1.14.0',port: 3000}, () => {
+const client = net.connect({ip :'10.1.21.104',port: 3000}, () => {
     // 'connect' listener
     console.log(`connected to server! - \nClient Name - ${clientTitle}\nResource - ${resource}` );
-    client.write(JSON.stringify({action: 'subscribe', type: resource}));
     // client.write(JSON.stringify({action: 'subscribe', type: 'fbpost'}));
-    client.write(JSON.stringify({action: 'subscribe', type: 'tweet'}));
     startTime = Date.now();
-    /*setTimeout(() => {
-        client.write(JSON.stringify({action: 'subscribe', type: 'fbpost'}));
+    setTimeout(() => {
+        client.write(JSON.stringify({action: 'subscribe', type: resource}));
     }, 1000);
 
     setTimeout(() => {
-        // client.write(JSON.stringify({action: 'subscribe', type: 'fbpost'}));
-    }, 2000);*/
+        client.write(JSON.stringify({action: 'subscribe', type: 'tweet'}));
+    }, 2000);
 });
 
 let counter = 0;
