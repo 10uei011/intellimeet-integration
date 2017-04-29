@@ -10,7 +10,7 @@ const schema = new eventSchema({
     },
     city: { type: String, required: true },
     organisedBy: { type: String, required: true },
-    openEvent: { type: Number },
+    openEvent: { type: boolean },
     source: { type: String },
     date: { type: Number },
     charges: { type: String }
