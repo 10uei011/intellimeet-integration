@@ -1,10 +1,13 @@
-var express = require('express')
-var app = express();
+const mongoose = require('mongoose');
 
-app.get('/', function (req, res) {
-  res.send('Hello Integration !')
-})
+const mongoUrl = require('./config/db');
 
-app.listen(3000, function () {
-  console.log('App is running on 3000!')
-})
+mongoose.connect(mongoUrl.mongoUrl);
+
+mongoose.connection.on("error",(error) => {
+  console.log("######error#########",error);
+});
+
+mongoose.connection.on("connected",() => {
+  console.log('connected to mongodb')
+});
