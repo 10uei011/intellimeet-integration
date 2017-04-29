@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/10uei011/intellimeet-integration/issues"
   },
-  "homepage": "https://github.com/10uei011/intellimeet-integration#readme"
+  "homepage": "https://github.com/10uei011/intellimeet-integration#readme",
+  "dependencies": {
+    "mongoose": "^4.9.6"
+  }
 }
