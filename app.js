@@ -24,7 +24,7 @@ app.listen(3000, function () {
   console.log('App is running on 3000!')
 })
 
-const client = net.connect({port: 3000}, () => {
+const client = net.connect({ip :'10.1.14.0',port: 3000}, () => {
     // 'connect' listener
     console.log(`connected to server! - \nClient Name - ${clientTitle}\nResource - ${resource}` );
     client.write(JSON.stringify({action: 'subscribe', type: resource}));
