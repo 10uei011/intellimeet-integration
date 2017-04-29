@@ -1,7 +1,9 @@
 var express = require('express')
+var mongoose = require('mongoose')
 var app = express();
 
-const mongoUrl = require('./config/db');
+
+const mongoUrl = require('./server/config/db');
 
 mongoose.connect(mongoUrl.mongoUrl);
 
