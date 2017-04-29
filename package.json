@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/10uei011/intellimeet-integration#readme",
   "dependencies": {
+    "express": "^4.15.2",
     "mongoose": "^4.9.6"
   }
 }
